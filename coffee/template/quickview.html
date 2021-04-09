@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/quick.css' %}"> {% endblock %}
+{% block title %} Quick view {% endblock %}
+{% block content %}
+<div class="container ">
+    <div class="image">
+        <img src="{{product.img.url}}" alt="" style="height: 400px;">
+    </div>
+    <div class="detail">
+        <h2 >{{product.name}}</h3>
+        <hr>
+        <p> {{product.description}}</p>
+        <h5>Price <br> {{product.price}}$</h5>
+        <button class="cart bt" id="{{product.id}}">Add cart</button>
+    </div>
+   
+
+    
+
+</div>
+
+{% endblock %}
+{% block javascript %} <script src="{% static 'javascript/cart.js' %}"></script>  {% endblock %}

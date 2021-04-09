@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} COFFEE {% endblock %}
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        {% for de in te %}
+        <div class="col-lg-3 col-md-6 col-12 my-3 d-flex justify-content-center ">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{de.img.url}}" alt="Card image cap" style="height: 250px; ">
+                <div class="card-body">
+                    <h5 class="card-title ">{{de.name}}</h5>
+                    <p class="card-text">{{de.price}}$</p>
+                    <button style="background-color: black;"><a href="{% url 'views' de.id 2 %}"
+                            style="text-decoration: none; color:white;">view</a></button>
+                    <button class="cart" id="{{de.id}}">Add Cart</button>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+
+
+    </div>
+</div>
+
+{% endblock %}
+{% block javascript %} <script src="{% static 'javascript/cart.js' %}"></script>  {% endblock %}

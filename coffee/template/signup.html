@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block javascript %}
+<script src="{% static 'javascript/signup.js' %}"></script> {% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}"> {% endblock %}
+{% block title %} Sign Up {% endblock %}
+{% block content %}
+<div class="center">
+    <div class="box">
+        <form action="{% url 'signup' %}" method="POST" onsubmit="return validation();">
+            {% csrf_token %}
+
+            <h1 class="st">Sign up</h1>
+
+            <div class=" inp">
+                <input type="text" id="fn" placeholder="First name" autocomplete="off" name="fname"
+                    style="background: none;">
+            </div>
+            <div class="inp">
+                <input type="text" id="ln" placeholder="Last name" autocomplete="off" name="lname">
+            </div>
+            <div class="inp">
+                <input type="email" id="em" placeholder="Email" autocomplete="off" name="mail">
+            </div>
+            <div class="inp">
+                <input type="password" id="ps1" placeholder="Password" autocomplete="off" name="password1">
+            </div>
+            <div class="inp">
+                <input type="password" id="ps2" placeholder="Renter password" autocomplete="off" name="password2">
+            </div>
+            <div class="inp">
+                <input type="text" id="us" placeholder="User" autocomplete="off" name="user">
+            </div>
+            {% for message in messages %}
+            <h style="color: white; text-align: center; padding:0%; margin:0%;">{{message}}</h>
+            {% endfor %}
+            <button type="submit" class="signbt"> Sign up</button>
+            <p class="acc">Have a Account ? <a href="{% url 'signin' %}" style="color: white;"> Sign in</a></p>
+        </form>
+
+
+
+    </div>
+</div>
+
+
+{% endblock %}

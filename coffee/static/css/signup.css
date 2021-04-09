@@ -1,0 +1,99 @@
+body{
+    background-image: url('/static/image/three.jpg');
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  position: relative;
+}
+.box{
+    width: 360px;
+    height: 450px;
+  
+   
+    
+    background-color: black;
+    box-sizing: border-box;
+   
+    
+    
+    border-radius: 20px;
+    margin-bottom: 90px;
+    margin-top: 90px;
+   
+    
+}
+.center{
+    display: flex;
+    justify-content: center;
+    
+}
+form{
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+   
+
+}
+h1{
+    text-align: center;
+    color: white;
+    font-style: italic;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+input{
+    font-size: 15px;
+    border: none;
+    width: 100%;
+    outline: none;
+    background: none;
+   
+   box-shadow: none;
+   
+   color: white;
+   margin-top: 10px;
+    
+    
+}
+.sp{
+    margin-bottom: 20px;
+}
+input::placeholder{
+    color:  white;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+ 
+  -webkit-text-fill-color:none;
+  
+  transition: background-color 5000s ease-in-out 0s;
+}
+.inp{
+    border-bottom: 2px solid white;
+    margin-left: 20px;
+    margin-right: 20px;
+  
+}
+button.signbt{
+    background:none;
+    color: white;
+    outline: none;
+    border: 1px solid white;
+    margin-top: 5px;
+    height: 50px;
+    width: 85%;
+    font-size: 17px;
+}
+p.acc{
+    color: white;
+    margin-top: 10px;
+    float: left;
+    padding-left: 25px;
+}

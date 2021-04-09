@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block javascript %}  <script src="{% static 'javascript/signin.js' %}"></script> {% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/signin.css' %}"> {% endblock %}
+{% block title %} Sign In {% endblock %}
+{% block content %}
+<div class="center">
+    <div class="box">
+        <h2 class="st">Sign In</h2>
+        <form action="{% url 'signin' %}" method="POST" onsubmit="return validation();">
+            {% csrf_token %}
+            <div class="inp sp"> <input type="email" id="email" name="email" placeholder="Enter Your Email" autocomplete="off"></div>
+            <div class="inp">  <input type="password" id="password" name="password" placeholder="Enter Your Password"></div>
+            <button type="submit" class="signbt"> Sign In</button>
+            <p class="acc">Don't Have Account ? <a href="{% url 'signup' %}" style="color: white;"> Sign Up</a></p>
+            {% for message in messages %}
+            <h style="color: white; text-align: center; padding:0%; margin:0%;">{{message}}</h>
+            {% endfor %}
+        </form>
+       
+  
+ 
+    </div>
+</div>
+
+{% endblock %}

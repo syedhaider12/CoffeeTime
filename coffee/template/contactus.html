@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block javascript %}  <script src="{% static 'javascript/contact.js' %}"></script> {% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}"> {% endblock %}
+{% block title %} Contact Us {% endblock %}
+{% block content %}
+<div class="center">
+    <div class="box">
+        <h2 class="st">I'D <i class="far fa-heart"></i> To Help!</h2>
+        <form action="{% url 'contact' %}" method="POST" onsubmit="return validation();">
+            {% csrf_token %}
+            <div class="inp sp"> <input type="text" id="user" name="nam" placeholder="Name" autocomplete="off"></div>
+            <div class="inp">  <input type="email" id="email" name="mail" placeholder="Email" autocomplete="off"></div>
+            <div><textarea name="text" id="text" cols="37" rows="5"></textarea></div>
+            <button type="submit" class="signbt"> Submit</button>
+        
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}
